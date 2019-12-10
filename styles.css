@@ -1,0 +1,219 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(white, rgb(186, 188, 196));
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.baslik {
+    background-color: rgb(59, 89, 152);
+    height: 11%;
+    width: 100%;
+    border: 1px solid darkblue;
+}
+
+.sag {
+    width: 43%;
+    position: absolute;
+    top: 16%;
+    left: 56%;
+}
+
+.sol {
+    width: 45%;
+    position: fixed;
+    left: -5%;
+}
+
+.alt {
+    position: absolute;
+    background-color: white;
+    width: 99%;
+    top: 95%;
+    padding: 4px 3px;
+    font-size: 12px;
+    height: 50px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+
+.alt ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    align-content: space-around;
+}
+
+.sol span {
+    color: rgb(14, 56, 95);
+    font-size: 20px;
+    font-weight: 700;
+    width: 380px;
+    word-spacing: -1;
+    display: block;
+    position: relative;
+    left: 200px;
+    margin: 2%;
+}
+
+.resim {
+    position: relative;
+    left: 200px;
+}
+
+.yardim {
+    width: 19px;
+    padding: 0 5px;
+}
+
+.kayit-form {
+    background-color: white;
+    border: 1px solid rgb(189, 199, 216);
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: 400;
+    outline-color: rgb(77, 144, 254);
+    padding-bottom: 8px;
+    padding-top: 8px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: 6px;
+    width: 180px;
+}
+
+.kayit-form2 {
+    background-color: white;
+    border: 1px solid rgb(189, 199, 216);
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: 400;
+    outline-color: rgb(77, 144, 254);
+    padding-bottom: 8px;
+    padding-top: 8px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: 6px;
+    width: 377px;
+}
+
+.tarih {
+    border: 1px solid rgb(189, 199, 216);
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 300;
+    outline-color: rgb(77, 144, 254);
+    padding-bottom: 6px;
+    padding-top: 6px;
+    padding-left: 8px;
+    padding-right: 8px;
+    margin: 5px;
+}
+
+.text-facebook {
+    font-size: 35px;
+    position: absolute;
+    left: 15%;
+    color: white;
+    top: 3.5%;
+}
+
+.text-eposta {
+    position: absolute;
+    right: 325px;
+    color: white;
+    top: 1%;
+    font-size: 12px;
+}
+
+.text-sifre {
+    position: absolute;
+    right: 240px;
+    color: white;
+    top: 1%;
+    font-size: 12px;
+}
+
+.text-rsifre {
+    font-size: 13px;
+    color: #dadee4;
+    text-decoration: none;
+    position: relative;
+    left: 175px;
+    top: 5px;
+}
+
+.text-hesap {
+    color: #333;
+    font-size: 32px;
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: 700;
+}
+
+.text-bilgi {
+    color: #1d2129;
+    font-size: 19px;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+.text-yas {
+    color: #8a8787;
+    font-size: 17px;
+    font-family: 'Trebuchet MS';
+}
+
+.text-ekhesap {
+    color: #5f4a4a;
+    font-size: 14px;
+    font-family: 'Trebuchet MS';
+}
+
+.input {
+    position: absolute;
+    left: 56%;
+    top: 4%;
+}
+
+.input input {
+    width: 150px;
+    height: 22px;
+    border: 0.5px solid black;
+}
+
+.input button {
+    background-color: #4267b2;
+    height: 22px;
+    color: white;
+    border: 1px solid darkblue;
+    border-radius: 3px;
+}
+
+.sag button {
+    width: 200px;
+    height: 40px;
+    left: 750px;
+    top: 625px;
+    background: rgb(72, 119, 72);
+    font-family: verdana;
+    font-size: 18px;
+    color: white;
+    border-radius: 5px 5px 5px 5px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: gray;
+    cursor: pointer;
+    outline: none;
+}
+
+.aciklama {
+    color: rgb(119, 119, 119);
+    display: block;
+    font-size: 11px;
+    margin-top: 11px;
+    margin-bottom: 11px;
+    width: 325px;
+}
