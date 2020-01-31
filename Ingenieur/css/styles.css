@@ -1,0 +1,110 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(rgb(202, 222, 235), rgb(140, 161, 165));
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.temel {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+}
+
+.zemin {
+    display: flex;
+    align-items: center;
+    align-content: center;
+}
+
+h1 {
+    font-size: 16px;
+    font-style: oblique;
+    margin: 0;
+    padding: 0 10px 15px;
+    color: #233a69;
+    text-align: center;
+}
+
+h2 {
+    margin: 0;
+    padding: 0 10px 15px;
+    color: #5178cc;
+    text-align: center;
+}
+
+.hesapmenu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    box-shadow: 4px 4px 5px #332d2d;
+    border: 5px solid rgb(63, 80, 110);
+    border-radius: 7px;
+    outline-color: rgb(77, 144, 254);
+}
+
+.giris {
+    background-color: white;
+    border: 1px solid rgb(189, 199, 216);
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: 400;
+    outline-color: rgb(77, 144, 254);
+    padding-bottom: 8px;
+    padding-top: 8px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: 6px;
+    width: 180px;
+}
+
+.sonuc {
+    background-color: rgb(250, 235, 235);
+    border: 1px solid rgb(28, 83, 179);
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: 400;
+    outline-color: rgb(77, 144, 254);
+    padding-bottom: 8px;
+    padding-top: 8px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: 6px;
+    width: 180px;
+}
+
+.hesapmenu button {
+    width: 200px;
+    height: 40px;
+    background: rgb(7, 73, 128);
+    font-family: verdana;
+    font-size: 18px;
+    color: white;
+    border-radius: 5px 5px 5px 5px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: gray;
+    cursor: pointer;
+    outline: none;
+}
+
+.buttonSON {
+    width: 350px;
+    height: 50px;
+    background: rgb(7, 73, 128);
+    font-family: verdana;
+    font-size: 16px;
+    color: white;
+    border-radius: 5px 5px 5px 5px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: gray;
+    cursor: pointer;
+    outline: none;
+}

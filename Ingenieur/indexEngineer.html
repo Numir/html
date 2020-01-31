@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Süleyman Mühendise yardım ET..</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- Kod ile kurcalarken iyi oluyor..-->
+    <meta http-equiv="refresh" content="11" />
+
+    <link rel="stylesheet" href="css/styles.css" media="screen" type="text/css" />
+    <script type="text/javascript" src="js/funktion.js"></script>
+    <script type="text/javascript" src="js/anwendung.js"></script>
+</head>
+
+<body>
+
+    <main class="temel">
+        <h2>Mühendis bey ben yardım etmek için ayarlandım emret abi..</h2><br>
+        <div class="zemin">
+
+            <div class="hesapmenu">
+                <h2>Dairenin <br> Alanı/Çevresi</h2>
+                <input class="giris" type="text" placeholder="Yarı Çapını Giriniz" id="daire_cap"></input><br>
+                <h1 class="sonuc" type="text" id="daire_alan">Alanı = ?</h1><br>
+                <h1 class="sonuc" type="text" id="daire_cev">Çevresi = ?</h1><br>
+                <button onclick=" daire_alan_cev() ">Hesapla</button><br><br>
+            </div>
+
+            <div class="hesapmenu">
+                <h2>Dikdörtgenin <br> Alanı/Çevresi</h2>
+                <input class="giris" type="text" placeholder="Uzunluk Giriniz" id="dikuz"></input>
+                <input class="giris" type="text" placeholder="Genişlik Giriniz" id="dikge"></input><br>
+                <h1 class="sonuc" type="text" id="dik_alan">Alanı = ?</h1>
+                <h1 class="sonuc" type="text" id="dik_cev">Çevresi = ?</h1><br>
+                <button onclick=" dikdortgen_alan_cev() ">Hesapla</button><br><br>
+            </div>
+
+            <div class="hesapmenu">
+                <h2>Küpün <br> Alanı/Çevresi</h2>
+                <input class="giris" type="text" placeholder="Kenarını Giriniz" id="kup"></input><br>
+                <h1 class="sonuc" type="text" id="kup_alan">Alanı = ?</h1><br>
+                <h1 class="sonuc" type="text" id="kup_hacim">Hacmi = ?</h1><br>
+                <button onclick=" kup_alan_cev() ">Hesapla</button><br><br>
+            </div>
+
+        </div>
+        <br>
+
+        <div class="zemin">
+            <button class="buttonSON" onclick="daire_alan_cev(cap()), dikdortgen_alan_cev(diku(),dikg()), kup_alan_cev(kup())"> Sabit Girilen Değerleri Hesapla <br>(anwendung.js)</button>
+        </div>
+
+    </main>
+
+</body>
+
+</html>
+
+<!--
+Merhaba arkadaslar
+Bu hafta alt programlar konusunu isledik. Alt programlar yazilan kodlarin tekrar tekrar kullanilabilmesini saglayan yapilardir. Asagidaki ödev'de alt programlar kullanilarak bir problemin cözümünü sizden bekliyoruz.
+
+Sahada calisan bir insaat mühendisi olan Ahmet, santiyede hesaplamalarini hassas ve güvenilir yapabilmesi icin bir islem fonksiyon gurubuna ihtiyac duymaktadir.
+
+Asagida yapilmasi gereken islemler siranlanmistir.
+- Yari capi verilen bir dairenin alaninin bulunmasi
+- Uzunluk ve genisligi verilen bir dikdörtgenin alaninin bulunmasi
+- Yari capi verilen bir dairenin cevresinin hesaplanmasi
+- Uzunluk ve genisligi bir dikdörtgenin cevresinin hesaplanmasi
+- Bir kenari verilen küpün hacminin hesaplanmasi
+- Bir kenari verilen küpün alaninin hesaplanmasi
+
+Yukaridaki hesaplamalari yapan fonksiyonlari Ahmet beye yardimci olmak icin yaziniz ve ana programda bu fonksiyonlari test ediniz...
+
+Teslimat: Isim_Soyisim_JS_103_insaat_muhendisi.zip
+- index.html (js programlarini eklemek icin kullanilacak)
+- hesaplama_metodlari.js (metodlari barindiran kütüphane)
+- app.js (ana program)
+
+Happy Coding!
+-->
