@@ -23,9 +23,8 @@ body {
 }
 
 h1 {
-    font-size: 16px;
+    font-size: 18px;
     font-style: oblique;
-    margin: 0;
     padding: 0 10px 15px;
     color: #233a69;
     text-align: center;
@@ -37,6 +36,17 @@ h2 {
     padding: 0 10px 15px;
     color: #5178cc;
     text-align: center;
+}
+
+.temel {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
 }
 
 .hesapmenu {
