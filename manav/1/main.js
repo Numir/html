@@ -1,38 +1,26 @@
-let meyve = ["elma", "armut", "şeftali", "muz"];
+const BizimBakkal = {};
 
-function veriTopla() {
-    let kullanıcıGiris = "";
-    for (let index = 0; index < meyve.length; index++) {
-
-
-
-        var div = document.createElement("div");
-        div.textContent = meyve[index];
-        div.classList = "kutu";
-        panel1.appendChild(div);
-
-        /*
-                kullanıcıGiris = prompt(index + 1 + ". Sayıyı Giriniz :", "iki");
-                this.sayiDizisi.push(kullanıcıGiris);
-                this.sayRakam.push(this.mapToNumber(kullanıcıGiris));
-                */
-    }
-    this.gonder(this.sayRakam);
-}
-
-const button = document.querySelector('#btnEkle');
-button.addEventListener('click', function() {
-    veriTopla();
-}, false);
-
-
-var btn1 = document.querySelector("#btnEkle");
-var panel = document.querySelector("#panel");
-
-btn1.onclick = function() {
-
-    var div = document.createElement("div");
-    div.textContent = meyve[0];
-    div.classList = "kutu";
-    panel1.appendChild(div);
+BizimBakkal.renderMenu = function() {
+    const menus = ["elma", "Armut", "Soğan"];
+    const ulMenus = menus.map(item => {
+        return '<li class="${item}">${item}</li>'
+    }).join("");
+    BizimBakkal.addOrder
 };
+BizimBakkal.addOrder = function() {
+
+};
+BizimBakkal.renderOrder = function() {
+
+};
+BizimBakkal.catchEvents = function() {
+
+};
+BizimBakkal.start = function() {
+    BizimBakkal.renderMenu();
+
+    //  BizimBakkal.a
+    //BizimBakkal.catchEvents();
+};
+
+BizimBakkal.start();

@@ -1,0 +1,16 @@
+.container{
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  width: 400px;
+}
+
+.delete{
+  min-width: 50px;
+  line-height: 30px;
+  height: 30px;
+  border-radius: 4px;
+  padding: 3px 3px;
+  background: red;
+  color: white;
+}
