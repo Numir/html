@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>IT Club Module 105 - ToDo List</title>
+
+        <link rel="stylesheet" href="./style.css">
+    </head>
+    <body>
+        
+        <main>
+            <h1>ToDoCu - manage your life with ease</h1>
+            <section>
+                <p id="errorMessage"></p><br>
+                <input id="todoItemElement" placeholder="Please enter your next todo!" />
+                <button id="addTodoTriggerElement">Add todo!</button>
+            </section>
+            <section>
+                <h2>your todo list:</h2>
+                <ul id="todoListContainer">
+                    <!-- The todo list will be rendered here! -->
+                </ul>
+            </section>
+            <section>
+                <input type="checkbox" id="todoDoneFilter" /> Show finished todos!
+            </section>
+        </main>
+
+        <script src="./functions.js"></script>
+        <script src="./app.js"></script>
+    </body>
+</html>
