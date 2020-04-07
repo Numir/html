@@ -29,7 +29,11 @@ addEventListenerToFilterElement();
 
 
 
-
+/*
+var rows = [{ "firstName": "John", "last Name": "Doe", "age": "46" },
+    { "firstName": "James", "last Name": "Blanc", "age": "24" }
+];
+*/
 
 
 /***

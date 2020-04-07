@@ -1,1 +1,44 @@
-﻿
+﻿<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muhasebeci Nedim Usta</title>
+    <meta http-equiv="refresh" content="236" />
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="menu">
+
+        <div class="giris">
+            <h1>bilgi islemi</h1>
+            <input type="text" id="ad" placeholder="Adınızı Giriniz..">
+            <input type="text" id="soyad" placeholder="Soyadınızı Giriniz..">
+
+            <select id="kantonlar">
+                <option value="" selected disabled>Please select</option>    
+            </select>
+
+            <button id="save">Kayıt</button>
+            <br>
+            <h4>* Lütfen bütün bilgileri girdiğinizden emin olun.</h4>
+            <h4 class="hata" id="hata"></h4>
+        </div>
+
+        <div class="liste">
+            <h2>Firma Listeleri</h2>
+            <input type="text" id="inputSearch" placeholder="Ad araması yapılabilir & Sıralama için başlığa tıklayabilirsiniz." title="Type in a name">
+
+            <table id="firmaTable">
+                <tr class="header">
+                </tr>
+            </table>
+
+            <script src="./model.js"></script>
+            <script src="./function.js"></script>
+            <script src="./app.js"></script>
+</body>
+
+</html>

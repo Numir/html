@@ -38,6 +38,11 @@ function addEventListenerToTriggerElement() {
         }
     });
 }
+let todoList = new Array();
+let isDoneFilterActive = false;
+
+addEventListenerToTriggerElement();
+addEventListenerToFilterElement();
 
 /**
  * Ekranda filtert checkboxuna bir event listener ekler
