@@ -1,10 +1,4 @@
-﻿function writeTextFile(afilename, output) {
-    var txtFile = new File(afilename);
-    txtFile.writeln(output);
-    txtFile.close();
-}
-
-function inputSearch() {
+﻿function inputSearch() {
     var input, filter, table, tr, td, i, txtValue;
     input = document.getElementById("inputSearch");
     filter = input.value.toLowerCase();

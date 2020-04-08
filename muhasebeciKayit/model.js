@@ -30,7 +30,7 @@ let kantonlar = ["", "Vaud(VD)",
 
 function inportToKanton() {
     let kantonList = findDomElementById("kantonlar");
-    let listArr = kantonlar.map(list => `<option>${list} </option>`).join("");
+    let listArr = kantonlar.map(list => `<option>${list}</option>`).join("");
     kantonList.innerHTML = listArr;
 }
 

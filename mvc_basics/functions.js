@@ -76,10 +76,7 @@ function renderToDoList() {
 
     todoListElement.innerHTML =
         todoList.filter(todo => todo.isDone == isDoneFilterActive)
-        .map(todo => `<li> 
-                                ${todo.text} 
-                                <span onclick="finishToDoItem('${todo.text}')">x</span>
-                             </li>`)
+        .map(todo => `<li>${todo.text}<span onclick="finishToDoItem('${todo.text}')">x</span></li>`)
         .join("");
 
     /* Alternatif eski cözüm yöntemi
