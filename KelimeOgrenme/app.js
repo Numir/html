@@ -36,7 +36,7 @@ function soruHazirla() {
          * TODO: dizi içinde kontrol olacak 
          * eğer varsa i-- olacak
          */
-        // console.log(cevaplar);
+
         //   cevaplar.push(randomWorte2()).join();
         digerCevap.push(randomWorte2());
     }
