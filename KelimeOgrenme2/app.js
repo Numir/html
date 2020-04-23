@@ -86,7 +86,7 @@ class Manager {
         if (appInfo.settings.password == password) {
             this.addToDom('.message', 'Hosgeldin admin!');
         }
-        //if()
+        //if() {}
         console.log(password);
     }
 

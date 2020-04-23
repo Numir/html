@@ -1,8 +1,6 @@
 /*
  * Tic Tac Toe
- *
  * A Tic Tac Toe game in HTML/JavaScript/CSS.
- *
  * @author: Vasanth Krishnamoorthy
  */
 var N_SIZE = 3,
