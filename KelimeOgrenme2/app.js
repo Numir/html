@@ -103,7 +103,7 @@ class Manager {
     }
 
     check() {
-        // ilk, ikinci ve sonuc sayilarini html den al
+        // ilk, ikinci ve sonuc sayilarini html den al..
         this.person.addQuiz(new Question(this.firstNumber, this.secondNumber, 22));
         this.person.printResults();
     }
@@ -115,11 +115,6 @@ function getData() {
     const manager = new Manager('ahmet');
     return manager.dbManager.getItem(manager.appName);
 }
-
-
-
-
-
 
 
 //manager.check();
