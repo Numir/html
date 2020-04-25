@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+
+
+var quill = new Quill('#editor-container', { modules: { toolbar: [ [{ header: [1, 2,3, false] }], ['bold', 'italic', 'underline'], ['image', 'code-block'], [{ 'font': [] }] ] }, placeholder: 'Compose an epic...', theme: 'snow' // or 'bubble' }); quill.setText('Süleyman\nSunumda..!\n');
+quill.formatText(0, 6, 'heading 1', true); quill.formatText(7, 4, 'color', 'blue'); quill.formatText(0, 2, 'color', 'red'); quill.formatLine(0, 1, 'align', 'right'); quill.formatLine(9, 1, 'align', 'center'); quill.getFormat(); quill.focus(); //,'link'
+//[{ 'font': [] }],
+
+</html>
