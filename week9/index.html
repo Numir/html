@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="admin-container">
+    hosgeldin admin!
+  </div>
+
+  <div class="student-container">
+    hosgeldin student!
+  </div>
+  <div class="login-container">
+    <div class="login-form">
+      <div class="message"></div>
+      <input type="text" name="password" class="password">
+      <input type="button" value="Login" class="login-button">
+    </div>
+  </div>
+  <div class="container"></div>
+
+  <!-- views -->
+  <script src="./views/LoginView.js"></script>
+  <script src="./views/AdminView.js"></script>
+  <script src="./views/StudentView.js"></script>
+
+  <!-- services -->
+  <script src="./services/DBManager.js"></script>
+  <script src="./services/Authentication.js"></script>
+
+  <!-- models -->
+  <script src="./models/Question.js"></script>
+  <script src="./models/Person.js"></script>
+
+  <script src="app.js"></script>
+</body>
+</html>

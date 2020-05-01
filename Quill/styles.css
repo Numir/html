@@ -7,9 +7,13 @@
     margin-top: 20px;
 }
 
-h1 {
+.left {
     color: rgb(80, 40, 40);
     font-size: 32px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-weight: 700;
+}
+
+.center {
+    text-align: center;
 }
