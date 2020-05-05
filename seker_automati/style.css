@@ -1,0 +1,104 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+
+.menu {
+    display: flex;
+    align-items: stretch;
+    width: 100%;
+    /*border: 3px solid rgb(28, 83, 179);*/
+}
+
+.giris {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-content: flex-start;
+    width: 40%;
+    border: 3px solid rgb(225, 227, 230);
+    margin: 30px;
+}
+
+.liste {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    border: 3px solid rgb(197, 199, 204);
+    margin: 30px 50px 30px 50px;
+}
+
+.giris input,
+select {
+    font-size: 16px;
+    padding: 12px 20px 12px 10px;
+    border: 1px solid #ddd;
+    margin-bottom: 12px;
+    margin: 10px;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    margin: 10px;
+}
+
+.liste input {
+    background-image: url('./img/ara.png');
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    background-size: 25px;
+    font-size: 16px;
+    padding: 12px 20px 12px 40px;
+    border: 1px solid #ddd;
+    margin-bottom: 12px;
+}
+
+.hata {
+    color: rgb(170, 32, 32);
+}
+
+button {
+    width: 200px;
+    height: 40px;
+    background: rgb(200, 211, 221);
+    font-family: verdana;
+    font-size: 18px;
+    color: rgb(24, 37, 97);
+    border-radius: 5px 5px 5px 5px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: gray;
+    cursor: pointer;
+    outline: none;
+    background-image: url('./img/sag.png');
+    background-position: right 10px;
+    background-repeat: no-repeat;
+    background-size: 20px;
+    margin: 10px;
+}
+
+#firmaTable {
+    border-collapse: collapse;
+    width: 100%;
+    border: 1px solid #ddd;
+    font-size: 18px;
+}
+
+#firmaTable th,
+#firmaTable td {
+    text-align: left;
+    padding: 12px;
+}
+
+#firmaTable tr {
+    border-bottom: 1px solid #ddd;
+}
+
+#firmaTable tr.header,
+#firmaTable tr:hover {
+    background-color: #7fc5d1;
+}
