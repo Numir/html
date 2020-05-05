@@ -1,68 +1,3 @@
-﻿<!DOCTYPE html>
-<html lang="tr">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Veteriner Nedim Usta</title>
-    <meta http-equiv="refresh" content="2306" />
-    <link rel="stylesheet" href="./style.css">
-
-    <!--Bootstrap-->
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
-    </script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
-    </script>
-    <!--Library-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Faker/3.1.0/faker.min.js" integrity="sha256-QHdJObhDO++VITP6S4tMlDHRWMaUOk+s/xWIRgF/YY0=" crossorigin="anonymous"></script>
-
-
-</head>
-
-<body>
-    <div class="menu">
-        <div class="giris">
-            <h1>Hasta Giriş.</h1>
-            <input type="text" id="ad" placeholder="Adınızı Giriniz..">
-            <input type="text" id="soyad" placeholder="Soyadınızı Giriniz..">
-
-            <select id="kantonlar">
-                <option value="" selected disabled>Please select</option>
-            </select>
-
-            <button id="save">Kayıt</button>
-            <br>
-            <h4>* Lütfen bütün bilgileri girdiğinizden emin olun.</h4>
-            <h4 class="hata" id="hata"></h4>
-        </div>
-
-        <div class="liste">
-            <h2>Veteriner Hayvan Listeleri</h2>
-            <input type="text" id="inputSearch" placeholder="Ad araması yapılabilir." title="Type in a name">
-
-            <table id="firmaTable">
-                <tr class="header">
-                </tr>
-            </table>
-        </div>
-    </div>
-
-    <div class="giris">
-        <veterinary></veterinary>
-    </div>
-
-    <script src="./function.js"></script>
-    <script src="./app.js"></script>
-</body>
-
-</html>
-
-
-
-<!--
-
 /**
  * Asagidaki parameterler bilinmektedir:
 
@@ -108,5 +43,13 @@ Gibi Niyazi Gül beye yardimci olabilecek istatsitiki bilgilerin gösterimi yapi
     edip ekrANA bir cıktı vemrsini saglamalıyız.
     ""
  */
-
--->
+let k=new VeterinaryManager;
+let kdoc=new DoctorManager;
+k.startDay();
+console.log(doctor)
+console.log(k.animalList)
+console.log(kdoc.doctorList)
+document.querySelector("veterinary").innerHTML=`
+${doctor}<br><br>
+${k.animalList.map((list)=>{list.animalAge})}
+`

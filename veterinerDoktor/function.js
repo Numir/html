@@ -1,4 +1,36 @@
-﻿function inputSearch() {
+﻿let firmalar = new Array();
+let kantonlar = ["", "Vaud(VD)",
+    "Bern(BE)",
+    "Luzern(Luzern)(LU)",
+    "Uri(UR)",
+    "Schwyz(SZ)",
+    "Obwalden(OW)",
+    "Nidwalden(NW)",
+
+];
+
+function inportToKanton() {
+    let kantonList = findDomElementById("kantonlar");
+    let listArr = kantonlar.map(list => `<option>${list}</option>`).join("");
+    kantonList.innerHTML = listArr;
+}
+
+function inputControl() {
+    //Buraya uyarı eklenecek. boş ise doldurmasını söyle.
+    if (readInputElementValue("ad") == "") {
+        hata();
+        return false;
+    } else if (readInputElementValue("soyad") == "") {
+        hata();
+        return false;
+    } else if (readInputElementValue("kantonlar") == "") {
+        hata();
+        return false;
+    }
+    return true;
+}
+
+function inputSearch() {
     var input, filter, table, tr, td, i, txtValue;
     input = document.getElementById("inputSearch");
     filter = input.value.toLowerCase();
@@ -34,7 +66,7 @@ function inputArray() {
     //Verileri temizle..
     inputDelete();
     //tabloyu yenile..
-    arrayToTable(firmalar);
+    arrayToTableS(firmalar);
 }
 
 // Bu fonksiyon verilen id ile dom üzerinden ilgili nesneyi bulur.
@@ -56,7 +88,7 @@ function hatasil() {
     document.getElementById("hata").innerHTML = "";
 }
 
-function arrayToTable(arr) {
+function arrayToTableS(arr) {
     let rows = arr;
     let headArr = '';
     headArr += '<tr  class="header">';
@@ -107,3 +139,88 @@ function sortTable(n) {
         }
     }
 }
+
+function start() {
+    inputDelete(); //Girişleri temizle
+    inportToKanton(); //kantonlar yükleniyor..
+    //Arama çubuğu hareketlenince burayı işle
+
+    let inputTosearch = findDomElementById("inputSearch");
+    inputTosearch.addEventListener("keyup", function(event) {
+        inputSearch();
+    });
+
+    //Kaydet butonuna basınca burdayım.
+    let buttonTosave = findDomElementById("save");
+    buttonTosave.addEventListener("click", function(event) {
+        if (inputControl()) {
+            inputArray()
+        };
+    });
+}
+
+start();
+
+
+
+
+
+/*
+
+
+//VeterinaryManager.js
+class VeterinaryManager2 {
+    animalList = [];
+    catParse = []; //Animaltype 1
+    fishParse = []; //Animaltype 2
+    ravenParse = []; //Animaltype 3
+    rapeutic = []; //Tedavi olan Hayvanların Dizisi
+    dayTimer = null;
+    maxLimit = 40;
+    constructor() {
+        this.createAnimal(Random.generateRandomNumber(10, this.maxLimit))
+        this.cat = new Cat;
+    }
+    startDay() {
+        this.animalParse()
+        console.log("catParse", this.catParse)
+        console.log("fishParse", this.fishParse)
+        console.log("ravenParse", this.ravenParse)
+    }
+    createAnimal(pNumber) {
+        for (let index = 0; index < pNumber; index++) {
+            this.animalList.push(Animal.generator())
+        }
+    }
+    animalParse() {
+        this.animalList.map((parse) => {
+            if (parse.animalType == 1) {
+                this.catParse.push("Kedi")
+            } else if (parse.animalType == 2) {
+                this.fishParse.push("Hamsi")
+            } else {
+                this.ravenParse.push("Karga")
+            }
+        })
+    }
+
+    enqueue(element) {
+        this.animalList.push(element);
+    }
+    dequeue() {
+        if (this.isEmpty())
+            return "Underflow";
+        return this.animalList.shift();
+    }
+    front() {
+        if (this.isEmpty())
+            return "No elements in Queue";
+        return this.animalList[0];
+    }
+
+    isEmpty(pData) {
+        return this.animalList.length === 0;
+    }
+}
+
+*/
