@@ -64,14 +64,12 @@ musteri.sekerOlustur();
 
 /*
 Merhabalar arkadaslar
-
 Ferruh emminin sekerci dükkani, cocuklarin cok ilgisini ceken ve cesit cesit sekerler bulunan bir dükkandir. 
 Ferruh emmi, dükkana daha hizli ve kaliteli hizmet vermek icin bir kac tane seker otomati koymak
  istemektedir. Her müsteri degisik miktarlarda sekeri sistemin ekranindan secebilir ve satin alma 
  islemini ödemesini yaparak bitir. Otomat satin alinan sekerlerin toplam ücretini ekranda gösterir 
  ve sekerlerin hacimlerine göre, sekerlerin konulacagi 3 fakli büyüklükte kagit posetten hangi(sini/lerini)
   kullanacagina karar verir ve sekeleri o posetler ile disari cikarir.
-
 Seker Cesitleri
 =======================
 - Yuvarlak lolipop (50cm3), CHF 3.-

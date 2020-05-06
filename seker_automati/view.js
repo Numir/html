@@ -1,12 +1,11 @@
 ﻿let firmalar = new Array();
 let kantonlar = ["", "Vaud(VD)",
     "Bern(BE)",
-    "Luzern(Luzern)(LU)",
+    "Luzern(Luz",
     "Uri(UR)",
     "Schwyz(SZ)",
     "Obwalden(OW)",
-    "Nidwalden(NW)",
-
+    "NidwalW)",
 ];
 
 function inportToKanton() {
@@ -68,7 +67,6 @@ function inputArray() {
     //tabloyu yenile..
     arrayToTableS(firmalar);
 }
-
 // Bu fonksiyon verilen id ile dom üzerinden ilgili nesneyi bulur.
 function findDomElementById(pId) {
     return document.querySelector(`#${pId}`);

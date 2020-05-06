@@ -8,6 +8,9 @@ class Sekerler {
             { name: "Lokum ", size: 8, price: 1.5 }
         ]
     }
+    start() {
+
+    }
     secmeSeker() {
         return this.seker[Random.generateRandomNumber(this.seker.length, 0)];
     }
