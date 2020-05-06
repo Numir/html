@@ -16,37 +16,19 @@ SENARYO :
  */
 
 
-class Random {
-    static adet() {
-        return Math.floor(Math.random() * 4);
-    }
-    static generateRandomNumber(pMax, pMin) {
-        return Math.floor(Math.random() * (pMax - pMin + 1) + pMin);
-    }
+//firmalar.push({ Ad: readInputElementValue("ad"), Soyad: readInputElementValue("soyad"), Kanton: readInputElementValue("kantonlar") });
 
-}
-class Sekerler {
-    constructor() {
-        this.seker = [
-            { name: "Yuvarlak lolipop", size: 50, price: 3 },
-            { name: "Burgulu lolipop", size: 20, price: 2.5 },
-            { name: "Jelibon ", size: 45, price: 2.75 },
-            { name: "Akide sekeri", size: 26, price: 5 },
-            { name: "Lokum ", size: 8, price: 1.5 }
-        ]
+function arrayToTable(arr) {
+    let rows = arr;
+    let headArr = '';
+    headArr += '<tr  class="header">';
+    for (let header in rows[0]) {
+        //headArr += '<th>' + header + '</th>';
+        headArr += '<th  onclick="sortTable(0)"  style="width:40%;">' + header + '</th>';
     }
-    secmeSeker() {
-        return this.seker[Random.generateRandomNumber(this.seker.length, 0)];
-    }
-}
-class Posetler {
-    constructor() {
-        this.poset = [
-            { name: "Küçük", size: 250, price: 0.2 },
-            { name: "Orta", size: 400, price: 0.35 },
-            { name: "Büyük", size: 750, price: 0.70 }
-        ]
-    }
+    headArr += '</tr>';
+    let listArr = rows.map(list => `<tr><td>${list.owner} </td><td> ${list.animalAge}</td><td>${list.animalType}</td></tr>`).join("");
+    document.getElementById("firmaTable").innerHTML = headArr + listArr;
 }
 
 class Musteri {
@@ -60,6 +42,8 @@ class Musteri {
     }
     sekerOlustur(adet) {
         for (let index = 0; index < adet; index++) {
+
+            this.musteriSekeri.push({ name: readInputElementValue("ad"), size: readInputElementValue("soyad"), price: readInputElementValue("kantonlar") });
             this.musteriSekeri.push(Sekerler.secmeSeker);
         }
         //   this.musteriSekeri.map(list => console.log(list.name));
@@ -68,7 +52,7 @@ class Musteri {
         let sayı = Random.generateRandomNumber(Sekerler.seker.length, 0);
         console.log(sayı);
 
-        console.log(Sekerler.secmeSeker);
+        console.log(Object.keys(Sekerler.secmeSeker));
 
     }
     rasgeleSecim() {}
