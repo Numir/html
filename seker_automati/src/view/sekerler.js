@@ -11,6 +11,9 @@ class Sekerler {
     start() {
 
     }
+    stop() {
+
+    }
     secmeSeker() {
         return this.seker[Random.generateRandomNumber(this.seker.length, 0)];
     }
