@@ -4,8 +4,23 @@ body {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 }
 
+td {
+    text-align: center
+}
+
 .ui-menu {
     width: 150px;
+}
+
+td,
+th {
+    padding: 4px;
+    background-color: silver;
+}
+
+#kayitlar {
+    margin-top: 10px;
+    width: 500px;
 }
 
 .menu {

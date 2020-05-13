@@ -1,50 +1,68 @@
-﻿let merhum = {
-    menu: [{
-        name: 'Croatia',
-        link: '0',
-        sub: null
-    }, {
-        name: 'England',
-        link: '1',
-        sub: [{
-            name: 'Arsenal',
-            link: '0-0',
-            sub: null
-        }, {
-            name: 'Liverpool',
-            link: '0-1',
-            sub: null
-        }, {
-            name: 'Manchester United',
-            link: '0-2',
-            sub: null
-        }]
-    }, {
-        name: 'Spain',
-        link: '2',
-        sub: [{
-            name: 'Barcelona',
-            link: '2-0',
-            sub: null
-        }, {
-            name: 'Real Madrid',
-            link: '2-1',
-            sub: null
-        }]
-    }, {
-        name: 'Germany',
-        link: '3',
-        sub: [{
-            name: 'Bayern Munich',
-            link: '3-1',
-            sub: null
-        }, {
-            name: 'Borrusia Dortmund',
-            link: '3-2',
-            sub: null
-        }]
-    }]
-};
+﻿var cart = [];
+$(function() {
+    if (localStorage.cart) {
+        cart = JSON.parse(localStorage.cart);
+        showCart();
+    }
+});
+
+function addToCart() {
+    var price = $("#products").val();
+    var name = $("#products option:selected").text();
+    var qty = $("#qty").val();
+
+    for (var i in cart) {
+        if (cart[i].Product == name) {
+            cart[i].Qty = qty;
+            showCart();
+            saveCart();
+            return;
+        }
+    }
+    var item = {
+        Product: name,
+        Price: price,
+        Qty: qty
+    };
+    cart.push(item);
+    saveCart();
+    showCart();
+}
+
+function deleteItem(index) {
+    cart.splice(index, 1);
+    showCart();
+    saveCart();
+}
+
+function saveCart() {
+    if (window.localStorage) {
+        localStorage.cart = JSON.stringify(cart);
+    }
+}
+
+function showCart() {
+    if (cart.length == 0) {
+        $("#cart").css("visibility", "hidden");
+        return;
+    }
+
+    $("#cart").css("visibility", "visible");
+    $("#cartBody").empty();
+    for (var i in cart) {
+        var item = cart[i];
+        var row = "<tr><td>" + item.Product + "</td><td>" +
+            item.Price + "</td><td>" + item.Qty + "</td><td>" +
+            item.Qty * item.Price + "</td><td>" +
+            "<button onclick='deleteItem(" + i + ")'>Delete</button></td></tr>";
+        $("#cartBody").append(row);
+    }
+}
+
+
+
+
+
 
 
 let firmalar = new Array();
