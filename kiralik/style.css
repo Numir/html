@@ -1,7 +1,7 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
 }
 
 td {
@@ -12,10 +12,9 @@ td {
     width: 150px;
 }
 
-td,
-th {
-    padding: 4px;
-    background-color: silver;
+.gizli {
+    visibility: hidden;
+    width: 100%
 }
 
 #kayitlar {
@@ -30,34 +29,47 @@ th {
     /*border: 3px solid rgb(28, 83, 179);*/
 }
 
+.ui-menu {
+    width: 150px;
+}
+
 .giris {
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
     justify-content: flex-start;
     align-content: flex-start;
-    width: 40%;
+    width: 25%;
     border: 3px solid rgb(225, 227, 230);
-    margin: 30px;
+    margin: 15px 8px 15px 8px;
 }
 
-.liste {
+.listeMusteri {
     display: flex;
     flex-direction: column;
-    width: 60%;
+    width: 20%;
     border: 3px solid rgb(197, 199, 204);
-    margin: 30px 50px 30px 50px;
+    margin: 15px 8px 15px 8px;
+}
+
+.listeMaktul {
+    display: flex;
+    flex-direction: column;
+    width: 55%;
+    border: 3px solid rgb(197, 199, 204);
+    margin: 15px 8px 15px 8px;
 }
 
 .giris input,
 select {
-    font-size: 16px;
-    padding: 12px 20px 12px 10px;
+    font-size: 14px;
+    padding: 8px;
     border: 1px solid #ddd;
     margin-bottom: 12px;
-    margin: 10px;
+    margin: 5px;
 }
 
+p,
 h1,
 h2,
 h3,
@@ -65,7 +77,8 @@ h4 {
     margin: 10px;
 }
 
-.liste input {
+.listeMusteri input,
+.listeMaktul input {
     background-image: url('./img/ara.png');
     background-position: 10px 10px;
     background-repeat: no-repeat;
@@ -81,11 +94,11 @@ h4 {
 }
 
 button {
-    width: 200px;
+    width: 150px;
     height: 40px;
     background: rgb(200, 211, 221);
     font-family: verdana;
-    font-size: 18px;
+    font-size: 14px;
     color: rgb(24, 37, 97);
     border-radius: 5px 5px 5px 5px;
     border-width: 1px;
@@ -100,24 +113,43 @@ button {
     margin: 10px;
 }
 
-#firmaTable {
+#musteriTable {
     border-collapse: collapse;
     width: 100%;
     border: 1px solid #ddd;
-    font-size: 18px;
+    font-size: 16px;
 }
 
-#firmaTable th,
-#firmaTable td {
+#maktulTable {
+    border-collapse: collapse;
+    width: 100%;
+    border: 1px solid #ddd;
+    font-size: 14px;
+}
+
+#musteriTable th,
+#musteriTable td {
+    text-align: center;
+    padding: 10px;
+}
+
+#maktulTable th,
+#maktulTable td {
     text-align: left;
-    padding: 12px;
+    padding: 10px;
 }
 
-#firmaTable tr {
+#maktulTable tr,
+#musteriTable tr {
     border-bottom: 1px solid #ddd;
 }
 
-#firmaTable tr.header,
-#firmaTable tr:hover {
+#musteriTable tr.header,
+#musteriTable tr:hover {
     background-color: #7fc5d1;
+}
+
+#maktulTable tr.header,
+#maktulTable tr:hover {
+    background-color: #db2e2e;
 }
