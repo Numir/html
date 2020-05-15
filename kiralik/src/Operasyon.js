@@ -6,6 +6,9 @@ class Operasyon {
     musteriEkle(pMusteri) {
         this.musteriler.push(pMusteri);
     }
+    geriVer() {
+        return this.musteriler;
+    }
 
 }
 const operasyon = new Operasyon();
@@ -41,5 +44,5 @@ operasyon.musteriEkle(musteriZiya);
 operasyon.musteriEkle(musteriYasar);
 operasyon.musteriEkle(musteriArnavut);
 
-console.log(musteriZiya.maktuller);
-console.log(operasyon.musteriler);
+//console.log(musteriZiya.maktuller);
+//console.log(operasyon.musteriler);

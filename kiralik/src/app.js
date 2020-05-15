@@ -117,7 +117,7 @@ function kayitEkle() {
 
     listele();
 
-    console.log(musteri);
+    //console.log(musteri);
 
 }
 
@@ -210,12 +210,7 @@ function inputArray() {
     tableMusteri(header = [{
         İsimler: ''
     }], "musteriTables", operasyon.musteriler);
-    tableMaktul(header = [{
-        İsimler: '',
-        Durum: '',
-        Adresler: '',
-        İşlemDurumu: ''
-    }], "maktulTables", musteriZiya.maktuller);
+
     // showMaktul();
 }
 
@@ -229,8 +224,58 @@ function tableMusteri(header, table, arr) {
         headArr += '<th  onclick="sortTable(0)"  style="width:100%;">' + header + '</th>';
     };
     headArr += '</tr>';
-    let listArr = rows.map(item => `<tr><td>${item.name} </td></tr>`).join("");
+    let listArr = rows.map(item => `<tr class="${item.name}"   onclick="maktulGoster('${item.name}')" ><td>${item.name} </td></tr>`).join("");
     document.getElementById(table).innerHTML = headArr + listArr;
+
+}
+
+
+function maktulGoster(maktul) {
+    let maktulolacak = operasyon.geriVer().filter(item => {
+        if (item.name == maktul) {
+            //let result = item.map(a => a.maktul); //_.map(item,"makul")
+
+            let liste = new Musteri(item.name);
+            console.log("LISTE = ", liste);
+            return liste;
+        }
+    });
+
+    //console.log(musteriZiya.maktuller);
+    //const musteriZiya = new Musteri('Ziya');
+
+    // let a = [{ z: 'word', c: 'again', d: 'some' }, { u: '1', r: '2', i: '3' }];
+    let b = maktulolacak.reduce((acc, obj) => [...acc, Object.values(obj).map(y => y)], []);
+
+    console.log("BBB", b)
+
+    /*
+    tableMaktul(header = [{
+        İsimler: '',
+        Durum: '',
+        Adresler: '',
+        İşlemDurumu: ''
+    }], "maktulTables", maktulolacak);
+*/
+
+
+    var homes = [];
+    $.each(b, function() {
+        if (this.name != undefined
+
+            //this.num_of_beds >= 2 &&
+            //this.num_of_baths >= 2.5
+        )
+
+        {
+            homes.push(this);
+        }
+    });
+
+    console.log(maktulolacak, " ++++ ", operasyon.geriVer(), homes);
+
+
+
 }
 
 function tableMaktul(header, table, arr) {
@@ -289,8 +334,43 @@ function hatasil() {
     document.getElementById("hata").innerHTML = "";
 }
 
-function start() {
 
+var table = document.getElementById("musteriTable");
+if (table != null) {
+    for (var i = 0; i < table.rows.length; i++) {
+        for (var j = 0; j < table.rows[i].cells.length; j++)
+            table.rows[i].cells[j].onclick = function() {
+                tableText(this);
+            };
+    }
+}
+
+function tableText(tableCell) {
+    alert(tableCell.innerHTML);
+}
+
+
+
+
+function start() {
+    /*
+    let menus = '.menus';
+    document.querySelector(menus)
+        .addEventListener('onclick', function(e) {
+            const selectedItem = e.target.className;
+            //  if (e.target.className === "menus") return; //farklı bir yere basınca hata veriyordu.
+            //  this.toplam(parseInt(this.fiyat(e.target.className)));
+            //  this.ordersData.push(selectedItem);
+            //   this.renderOrder();
+            ekinci.push(e.target.id);
+            ekinci.push(selectedItem);
+
+
+
+
+        }.bind(this));
+
+*/
     inportToKanton(); //kantonlar yükleniyor..
     //Arama çubuğu hareketlenince burayı işle
 
