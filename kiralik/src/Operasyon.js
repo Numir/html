@@ -9,7 +9,6 @@ class Operasyon {
     geriVer() {
         return this.musteriler;
     }
-
 }
 const operasyon = new Operasyon();
 
@@ -43,6 +42,4 @@ musteriArnavut.maktulEkle(maktulLeyla);
 operasyon.musteriEkle(musteriZiya);
 operasyon.musteriEkle(musteriYasar);
 operasyon.musteriEkle(musteriArnavut);
-
-//console.log(musteriZiya.maktuller);
-//console.log(operasyon.musteriler);
+//operasyon.musteriEkle(new Musteri("AA").maktulEkle(new Maktul('Zeki').AdresEkle(new Adres('Badenstrasse 254', '8803', 'BADEN'))));

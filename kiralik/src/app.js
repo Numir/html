@@ -13,11 +13,10 @@
 /** 
 *TEKNIK DETAY
 + Operasyon başlar.
- 
++ ekleme yapılacak ise yapılır
++ liste kontrol edilir.
++ işi biten emekliğe ayrılır. karartırılır. 
 */
-
-//const operasyon = new Operasyon();
-
 
 let listKill = [];
 $(function() {
@@ -26,128 +25,48 @@ $(function() {
         //showCart();
     }
 });
-
-var cart = [];
-$(function() {
-    if (localStorage.cart) {
-        cart = JSON.parse(localStorage.cart);
-        showCart();
-    }
-});
-
-function addToCart() {
-    var price = $("#products").val();
-    var name = $("#products option:selected").text();
-    var qty = $("#qty").val();
-
-    for (var i in cart) {
-        if (cart[i].Product == name) {
-            cart[i].Qty = qty;
-            showCart();
-            saveCart();
-            return;
-        }
-    }
-    var item = {
-        Product: name,
-        Price: price,
-        Qty: qty
-    };
-    cart.push(item);
-    saveCart();
-    showCart();
-}
-
-function deleteItem(index) {
-    cart.splice(index, 1);
-    showCart();
-    saveCart();
-}
-
-function saveCart() {
-    if (window.localStorage) {
-        localStorage.cart = JSON.stringify(cart);
-    }
-}
-
-function showCart() {
-    if (cart.length == 0) {
-        $("#cart").css("visibility", "hidden");
-        return;
-    }
-
-    $("#cart").css("visibility", "visible");
-    $("#cartBody").empty();
-    for (var i in cart) {
-        var item = cart[i];
-        var row = "<tr><td>" + item.Product + "</td><td>" +
-            item.Price + "</td><td>" + item.Qty + "</td><td>" +
-            item.Qty * item.Price + "</td><td>" +
-            "<button onclick='deleteItem(" + i + ")'>Delete</button></td></tr>";
-        $("#cartBody").append(row);
-    }
-}
-
-
 /***
- * 
+ *  local belleğe kayıt yaptırılacak
  * */
-
-
 function localStorageSAVE(deger) {
-
-}
-
-function kayitEkle() {
     let musteri = {
-        Müşteri: $("#ad").val(),
-        Ücret: $("#para").val(),
-        Maktul: $("#maktul").val()
+        Müşteri: $("#ad").val() || "",
+        Ücret: $("#para").val() || "",
+        Maktul: $("#maktul").val() || ""
     };
     listKill.push(musteri);
     if (window.localStorage) {
         localStorage.listKill = JSON.stringify(listKill);
     }
-
     //Verileri temizle..
-    // inputDelete();
-
-    // arrayToTableS(musteriZiya.maktuller);
-
-
-    listele();
-
-    //console.log(musteri);
-
-}
-
-function kayitSil(pId) {
-    localStorage.removeItem(`#${pId}`.val());
+    inputDelete();
     listele();
 }
 
-function hepsiniSil() {
-    localStorage.clear();
-    listele();
+function inputDelete() {
+    veriDelete("ad");
+    veriDelete("para");
+    veriDelete("maktul");
+    veriDelete("maktulstreet");
+    veriDelete("maktulplz");
+    veriDelete("maktulort");
+}
+
+function veriDelete(idDel) {
+    let valueDel = findDomElementById(idDel);
+    valueDel.value = ""
+}
+
+function deleteItem(index) {
+    // işi biten maktul buradan pasif hale getirilecek
 }
 
 function listele() {
-    if (kontrol()) {
-        var liste = "<tr><th>İsim</th><th>Değer</th></tr>";
-        var anahtar = "";
-        var i = 0;
-        for (i = 0; i <= localStorage.length - 1; i++) {
-            anahtar = localStorage.key(i);
-            liste += "<tr><td>" + anahtar + "</td><td>" +
-                localStorage.getItem(anahtar) + "</td></tr>";
-        }
-        document.getElementById("liste").innerHTML = liste;
-        if (localStorage.length > 0) {
-            document.getElementById("kayitlar").style.visibility = "visible";
-        } else {
-            document.getElementById("kayitlar").style.visibility = "hidden";
-        }
-    } else {
+    //tabloyu yenile..musteriTables
+    tableMusteri(header = [{
+        İsimler: ''
+    }], "musteriTables", operasyon.musteriler);
+    if (kontrol()) {} else {
         alert("Tarayıcıda local storage desteği bulunmamaktadır!");
     }
 }
@@ -159,61 +78,30 @@ function kontrol() {
         return false;
     }
 }
-/***
- * 
- */
-
-let kantonlar = ["", "Vaud(VD)",
-    "Bern(BE)",
-    "Luzern(Luz",
-    "Uri(UR)",
-    "Schwyz(SZ)",
-    "Obwalden(OW)",
-    "NidwalW)",
-];
-
-function inportToKanton() {
-    /*
-    let kantonList = findDomElementById("kantonlar");
-    let listArr = kantonlar.map(list => `<option>${list}</option>`).join("");
-    kantonList.innerHTML = listArr;
-*/
-    let products = findDomElementById("products");
-    let listAS = kantonlar.map(list => `<option>${list}</option>`).join("");
-    products.innerHTML = listAS;
-
-}
-
 
 function inputControl() {
     //Buraya uyarı eklenecek. boş ise doldurmasını söyle.
-    /*
-     if (readInputElementValue("ad") == "") {
-         hata();
-         return false;
-     } else if (readInputElementValue("para") == "") {
-         hata();
-         return false;
-     } else if (readInputElementValue("maktul") == "") {
-         hata();
-         return false;
-     }
-    */
+    if (readInputElementValue("ad") == "") {
+        hata();
+        return false;
+    } else if (readInputElementValue("para") == "") {
+        hata();
+        return false;
+    } else if (readInputElementValue("maktul") == "") {
+        hata();
+        return false;
+    }
     return true;
 }
 
 function inputArray() {
-    firmalar.push({ Ad: readInputElementValue("ad"), Soyad: readInputElementValue("para"), Kanton: readInputElementValue("maktul") });
-    //Verileri temizle..
-    // inputDelete();
-    //tabloyu yenile..maktulTables
-    tableMusteri(header = [{
-        İsimler: ''
-    }], "musteriTables", operasyon.musteriler);
-
-    // showMaktul();
+    let newMusteri = new Musteri(readInputElementValue("ad"));
+    let newMaktul = new Maktul(readInputElementValue("maktul"));
+    let newMaktulAdres = new Adres(readInputElementValue("maktulstreet"), readInputElementValue("maktulplz"), readInputElementValue("maktulort"));
+    newMaktul.AdresEkle(newMaktulAdres);
+    newMusteri.maktulEkle(newMaktul);
+    operasyon.musteriEkle(newMusteri);
 }
-
 
 function tableMusteri(header, table, arr) {
     let rows = arr;
@@ -226,56 +114,27 @@ function tableMusteri(header, table, arr) {
     headArr += '</tr>';
     let listArr = rows.map(item => `<tr class="${item.name}"   onclick="maktulGoster('${item.name}')" ><td>${item.name} </td></tr>`).join("");
     document.getElementById(table).innerHTML = headArr + listArr;
-
 }
 
-
+//Müşteri listedeki seçim sonrası maktulleri getirir.
 function maktulGoster(maktul) {
     let maktulolacak = operasyon.geriVer().filter(item => {
         if (item.name == maktul) {
-            //let result = item.map(a => a.maktul); //_.map(item,"makul")
-
+            //let result = item.map(a => a.maktul); //_.map(item,"maktul")
             let liste = new Musteri(item.name);
             console.log("LISTE = ", liste);
             return liste;
         }
     });
-
-    //console.log(musteriZiya.maktuller);
-    //const musteriZiya = new Musteri('Ziya');
-
-    // let a = [{ z: 'word', c: 'again', d: 'some' }, { u: '1', r: '2', i: '3' }];
-    let b = maktulolacak.reduce((acc, obj) => [...acc, Object.values(obj).map(y => y)], []);
-
-    console.log("BBB", b)
-
-    /*
+    const newAR = Object.keys(maktulolacak).map(function(key, index) {
+        return [Number(key), maktulolacak[key]];
+    });
     tableMaktul(header = [{
         İsimler: '',
         Durum: '',
         Adresler: '',
         İşlemDurumu: ''
-    }], "maktulTables", maktulolacak);
-*/
-
-
-    var homes = [];
-    $.each(b, function() {
-        if (this.name != undefined
-
-            //this.num_of_beds >= 2 &&
-            //this.num_of_baths >= 2.5
-        )
-
-        {
-            homes.push(this);
-        }
-    });
-
-    console.log(maktulolacak, " ++++ ", operasyon.geriVer(), homes);
-
-
-
+    }], "maktulTables", newAR[0][1].maktuller);
 }
 
 function tableMaktul(header, table, arr) {
@@ -293,15 +152,8 @@ function tableMaktul(header, table, arr) {
 }
 
 function arrayToTableS(header, table, arr) {
-
     let rows = arr;
-    let baslik = [{
-        İsimler: '',
-        Durum: '',
-        Adresler: '',
-        İşlemDurumu: ''
-    }];
-    let bas = header;
+    let baslik = header;
     if (rows.length == 0) {
         $(`#${table}`).css("visibility", "hidden");
         return;
@@ -311,18 +163,15 @@ function arrayToTableS(header, table, arr) {
 
     let headArr = '';
     headArr += '<tr  class="header">';
-    for (let header in bas[0]) {
+    for (let header in baslik[0]) {
         //headArr += '<th>' + header + '</th>';
         headArr += '<th  onclick="sortTable(0)"  style="width:20%;">' + header + '</th>';
     }
     headArr += '</tr>';
-
-    //let listArr = rows.map(item => `<tr><td>${item.name} </td><td> ${item.durum}</td><td>${item.adresler[0].street}</td>
     //let listArr = rows.map(item => `<tr><td>${item.name} </td><td> ${item.durum}</td><td>${item.adresler[0].Adres}</td>
     let listArr = rows.map(item => `<tr><td>${item.name} </td>
         <td><button onclick='deleteItem(" + i + ")'>Öldü</button></td></tr>`).join("");
     document.getElementById(table).innerHTML = headArr + listArr;
-
 }
 
 function hata() {
@@ -334,46 +183,8 @@ function hatasil() {
     document.getElementById("hata").innerHTML = "";
 }
 
-
-var table = document.getElementById("musteriTable");
-if (table != null) {
-    for (var i = 0; i < table.rows.length; i++) {
-        for (var j = 0; j < table.rows[i].cells.length; j++)
-            table.rows[i].cells[j].onclick = function() {
-                tableText(this);
-            };
-    }
-}
-
-function tableText(tableCell) {
-    alert(tableCell.innerHTML);
-}
-
-
-
-
 function start() {
-    /*
-    let menus = '.menus';
-    document.querySelector(menus)
-        .addEventListener('onclick', function(e) {
-            const selectedItem = e.target.className;
-            //  if (e.target.className === "menus") return; //farklı bir yere basınca hata veriyordu.
-            //  this.toplam(parseInt(this.fiyat(e.target.className)));
-            //  this.ordersData.push(selectedItem);
-            //   this.renderOrder();
-            ekinci.push(e.target.id);
-            ekinci.push(selectedItem);
-
-
-
-
-        }.bind(this));
-
-*/
-    inportToKanton(); //kantonlar yükleniyor..
     //Arama çubuğu hareketlenince burayı işle
-
     let inputTosearch = findDomElementById("inputSearch");
     inputTosearch.addEventListener("keyup", function(event) {
         inputSearch();
@@ -385,8 +196,9 @@ function start() {
         if (inputControl()) {
             inputArray()
         };
-        kayitEkle();
+        localStorageSAVE();
     });
+
     listele();
 }
 
