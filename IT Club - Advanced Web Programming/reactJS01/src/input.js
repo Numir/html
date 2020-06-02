@@ -8,7 +8,6 @@ export class InputList extends React.Component {
 componentWillMound(){
   document.write(" Maktul Adını Giriniz..")
 }*/
-
     render() {
       const myInput = 'Müşteri Girişi :.';
         return (

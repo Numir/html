@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hicoders - React - SuleyMAN</title>
+    <link rel="stylesheet" href="./public/style.css">
+    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+
+<body>
+
+    <div class="menu">
+        <div id="inputs" class="giris"></div>
+        <script type="text/babel">
+
+            class HelloMessage extends React.Component {
+                render() {
+                    return (
+                        <div>
+                            <h4>Merhabalar  {this.props.name}</h4><hr />
+                            <input type="text" id="ad" placeholder="Adını Giriniz.." />
+                            <input type="text" id="para" placeholder="Soyadınızı Giriniz.." />
+                            <input type="text" id="para" placeholder="Doğum Tarihinizi Giriniz.." />
+                            <button id="save">Kaydet</button>
+                        </div>
+                    );
+                }
+            }
+
+            ReactDOM.render(
+                <HelloMessage name="Müşteri" />,
+                document.getElementById('inputs')
+            );
+
+        </script>
+
+</body>
+
+</html>
