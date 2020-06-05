@@ -1,0 +1,170 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>İşini seven Katil</title>
+    <meta http-equiv="refresh" content="2306" />
+    <link rel="stylesheet" href="./style.css" />
+
+    <script>
+      function findDomElementById(pId) {
+        return document.querySelector(`#${pId}`);
+      }
+
+      function readInputElementValue(pId) {
+        let inputElement = findDomElementById(pId);
+        return inputElement.value;
+      }
+
+      function generateRandomNumber(pMax, pMin) {
+        return Math.floor(Math.random() * (pMax - pMin + 1) + pMin);
+      }
+      let kantonlar = [
+        '',
+        'Vaud(VD)',
+        'Bern(BE)',
+        'Luzern(Luz',
+        'Uri(UR)',
+        'Schwyz(SZ)',
+        'Obwalden(OW)',
+        'NidwalW)',
+      ];
+
+      function inportToAbout() {
+        // let products = findDomElementById('projee');
+        let products = document.querySelector('.projee');
+        let listAS = kantonlar
+          .map((list) => `<option>${list}</option>`)
+          .join('');
+        products.innerHTML = listAS;
+      }
+    </script>
+  </head>
+
+  <body>
+    <div class="menu">
+      <div class="giris">
+        <h2>Kullanıcı Girişi.</h2>
+        <input type="text" id="ad" placeholder="Adını Giriniz.." />
+        <input type="text" id="para" placeholder="Mail adresinizi Giriniz.." />
+        <input type="text" id="para" placeholder="Cinsiyet Giriniz.." />
+        <input
+          type="text"
+          id="para"
+          placeholder="Telefon numaranızı Giriniz.."
+        />
+
+        <h3>Sorumluluk Bilgileri :</h3>
+        <h4>İstekleriniz Nelerdir :</h4>
+        <select id="projee">
+          <option>Hizmet Almak İstiyorum</option>
+          <option>--</option>
+        </select>
+        <select id="projee">
+          <option>Dil Eğitimi </option>
+          <option>--</option>
+        </select>
+        <select id="projee">
+          <option>Kendim için</option>
+          <option>--</option>
+        </select>
+
+        <input
+          type="text"
+          id="maktul"
+          placeholder="Özel talebiniz varsa Giriniz.."
+        />
+
+        <button id="save">Kaydet</button>
+        <br />
+        <h4>* Lütfen bütün bilgileri girdiğinizden emin olun.</h4>
+        <h4 class="hata" id="hata"></h4>
+      </div>
+
+      <div class="listeMusteri">
+        <h2>Kullanıcı Listesi</h2>
+        <input
+          type="text"
+          id="inputSearch"
+          placeholder="Ad araması yapılabilir."
+          title="Type in a name"
+        />
+        <table class="musteri" id="musteriTable">
+          <tr class="header"></tr>
+          <tbody id="musteriTables"></tbody>
+        </table>
+      </div>
+
+      <div class="listeMaktul">
+        <h2>Eşleşen Sınıf Listesi</h2>
+        <input
+          type="text"
+          id="inputSearch"
+          placeholder="Ad araması yapılabilir."
+          title="Type in a name"
+        />
+        <table id="maktulTable">
+          <tr class="header"></tr>
+          <tbody id="maktulTables"></tbody>
+        </table>
+      </div>
+    </div>
+    <!-- ################################ -->
+
+    <!-- ################################ -->
+    <div class="listeAdres">
+      <h2>Sepet</h2>
+      Ürün Seçimi :
+      <select id="products"> </select>
+      Adet
+      <input type="text" id="qty" size="3" />
+      <p />
+      <button id="btnAdd" onclick="addToCart()">Sepete Ekle</button>
+
+      <table id="cart" border="1" class="gizli">
+        <thead>
+          <tr>
+            <th>Ürün</th>
+            <th>Fiyat</th>
+            <th>Adet</th>
+            <th>Toplam</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="cartBody"></tbody>
+      </table>
+    </div>
+
+    <!-- ################################ -->
+    <div>
+      <input type="button" value="Temizle" onclick="hepsiniSil()" />
+      <br />
+      <div id="kayitlar">
+        <p>Kayıt Listesi:</p>
+        <table id="liste"></table>
+      </div>
+    </div>
+    <!-- ################################ -->
+
+    <!-- ################################ -->
+
+    <!--Library-->
+    <script src="./lib/jquery-3.5.1.min.js"></script>
+
+    <!--Model
+    <script src="./src/model/Musteri.js"></script>
+    <script src="./src/model/Maktul.js"></script>
+    <script src="./src/model/Adres.js"></script>
+-->
+    <!--View
+    <script src="./src/view/MusteriListesi.js"></script>
+    <script src="./src/view/MaktulListesi.js"></script>
+-->
+    <!--app
+    <script src="./src/tool.js"></script>
+    <script src="./view.js"></script>
+    <script src="./src/Operasyon.js"></script>
+    <script src="./src/app.js"></script>
+  --></body>
+</html>
