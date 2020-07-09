@@ -1,7 +1,5 @@
 ﻿let firmalar = new Array();
 
-
-
 function inputSearch() {
     var input, filter, table, tr, td, i, txtValue;
     input = document.getElementById("inputSearch");
@@ -20,13 +18,6 @@ function inputSearch() {
         }
     }
 }
-
-
-
-
-
-
-
 
 
 //Alıntı = https://www.w3schools.com/howto/howto_js_sort_table.asp
@@ -76,8 +67,7 @@ function sortTable(n) {
 
 
 /*
-
-
+//VeterinaryManager.js
 //VeterinaryManager.js
 class VeterinaryManager2 {
     animalList = [];
