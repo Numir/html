@@ -42,7 +42,10 @@ manavOsman.renderOrder = function() {
                 return sum;
             }, [])
             .map(info => {
-                return `<li class="${info.key}">${info.key}  =  ${parseInt(this.fiyat(info.key)) * info.value}  TL (Toplam: ${info.value} kg)<span class="delete">X</span></li>`;
+                return `<li class="${info.key}">${info.key} 
+                 =  ${parseInt(this.fiyat(info.key)) * info.value} 
+                  TL (Toplam: ${info.value} kg)<span class="delete">
+                  X</span></li>`;
             })
             .join('');
         this.addToDom(manavOsman.orders, ulMenus);
